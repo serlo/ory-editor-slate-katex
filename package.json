@@ -1,6 +1,6 @@
 {
-  "name": "ory-editor-plugins-skeleton",
-  "version": "0.0.0",
+  "name": "ory-editor-slate-katex",
+  "version": "0.1.0",
   "main": "./lib/index.js",
   "scripts": {
     "build:lib": "babel ./src --ignore test.js --out-dir ./lib",
@@ -27,9 +27,15 @@
   "license": "AGPL-3.0",
   "peerDependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "selection-position": "^1.0.0",
+
   },
   "dependencies": {
+    "katex": "^0.8.3",
+    "react-katex": "^1.2.0",
+    "react-portal": "^3.1.0",
+    "react-tap-event-plugin": "^2.0.1",
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

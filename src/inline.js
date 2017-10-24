@@ -1,24 +1,20 @@
-import React, { PropTypes } from 'react'
-import { InlineMath } from 'react-katex'
+import React from 'react'
+import MathComponent from './mathComponent'
+import Form from './Form'
+import 'katex/dist/katex.min.css'
 
-const Inline = ({ attributes, children, node }) => {
+const Inline = (props) => {
+  const { attributes, children, node } = props
   const { data } = node
   const formula = data.get('formula')
 
   return (
     <span {...attributes}>
-      <InlineMath math={formula} />
+      <MathComponent formula={formula} inline/>
+      <Form formula={formula} {...props}/>
       {children}
     </span>
   )
-}
-
-Inline.propTypes = {
-  attributes: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.element, PropTypes.array]).isRequired,
-  node: PropTypes.shape({
-    data: PropTypes.any
-  })
 }
 
 export default Inline
